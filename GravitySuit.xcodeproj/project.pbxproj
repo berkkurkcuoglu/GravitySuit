@@ -15,6 +15,9 @@
 		C013E15F1EBE96AD00CC9503 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C013E15D1EBE96AD00CC9503 /* LaunchScreen.storyboard */; };
 		C013E16A1EBE96AD00CC9503 /* GravitySuitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1691EBE96AD00CC9503 /* GravitySuitTests.m */; };
 		C013E1751EBE96AD00CC9503 /* GravitySuitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1741EBE96AD00CC9503 /* GravitySuitUITests.m */; };
+		C013E1841EBE975A00CC9503 /* Suit.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1831EBE975A00CC9503 /* Suit.m */; };
+		C013E1871EBE976A00CC9503 /* Meteoroid.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1861EBE976A00CC9503 /* Meteoroid.m */; };
+		C013E18A1EBE978800CC9503 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1891EBE978800CC9503 /* GameView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		C013E1701EBE96AD00CC9503 /* GravitySuitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GravitySuitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C013E1741EBE96AD00CC9503 /* GravitySuitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GravitySuitUITests.m; sourceTree = "<group>"; };
 		C013E1761EBE96AD00CC9503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C013E1821EBE975A00CC9503 /* Suit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Suit.h; sourceTree = "<group>"; };
+		C013E1831EBE975A00CC9503 /* Suit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Suit.m; sourceTree = "<group>"; };
+		C013E1851EBE976A00CC9503 /* Meteoroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meteoroid.h; sourceTree = "<group>"; };
+		C013E1861EBE976A00CC9503 /* Meteoroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meteoroid.m; sourceTree = "<group>"; };
+		C013E1881EBE978800CC9503 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
+		C013E1891EBE978800CC9503 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,12 @@
 				C013E1521EBE96AC00CC9503 /* AppDelegate.h */,
 				C013E1531EBE96AD00CC9503 /* AppDelegate.m */,
 				C013E1551EBE96AD00CC9503 /* ViewController.h */,
+				C013E1821EBE975A00CC9503 /* Suit.h */,
+				C013E1831EBE975A00CC9503 /* Suit.m */,
+				C013E1851EBE976A00CC9503 /* Meteoroid.h */,
+				C013E1861EBE976A00CC9503 /* Meteoroid.m */,
+				C013E1881EBE978800CC9503 /* GameView.h */,
+				C013E1891EBE978800CC9503 /* GameView.m */,
 				C013E1561EBE96AD00CC9503 /* ViewController.m */,
 				C013E1581EBE96AD00CC9503 /* Main.storyboard */,
 				C013E15B1EBE96AD00CC9503 /* Assets.xcassets */,
@@ -276,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C013E18A1EBE978800CC9503 /* GameView.m in Sources */,
 				C013E1571EBE96AD00CC9503 /* ViewController.m in Sources */,
 				C013E1541EBE96AD00CC9503 /* AppDelegate.m in Sources */,
+				C013E1841EBE975A00CC9503 /* Suit.m in Sources */,
+				C013E1871EBE976A00CC9503 /* Meteoroid.m in Sources */,
 				C013E1511EBE96AC00CC9503 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
