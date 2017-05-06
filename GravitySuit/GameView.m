@@ -8,6 +8,7 @@
 
 #import "GameView.h"
 #include "Suit.h"
+#include "Meteoroid.h"
 
 @implementation GameView
 
