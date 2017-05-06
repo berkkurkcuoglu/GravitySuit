@@ -7,6 +7,7 @@
 //
 
 #import "GameView.h"
+#include "Suit.h"
 
 @implementation GameView
 
