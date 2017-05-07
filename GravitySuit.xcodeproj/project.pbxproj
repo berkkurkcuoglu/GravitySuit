@@ -18,6 +18,9 @@
 		C013E1841EBE975A00CC9503 /* Suit.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1831EBE975A00CC9503 /* Suit.m */; };
 		C013E1871EBE976A00CC9503 /* Meteoroid.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1861EBE976A00CC9503 /* Meteoroid.m */; };
 		C013E18A1EBE978800CC9503 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1891EBE978800CC9503 /* GameView.m */; };
+		C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9D1EBFCE2000D1BC42 /* background.jpg */; };
+		C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */; };
+		C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9F1EBFCE2000D1BC42 /* suit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		C013E1861EBE976A00CC9503 /* Meteoroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meteoroid.m; sourceTree = "<group>"; };
 		C013E1881EBE978800CC9503 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		C013E1891EBE978800CC9503 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
+		C049EC9D1EBFCE2000D1BC42 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../background.jpg; sourceTree = "<group>"; };
+		C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meteoroid.png; path = ../meteoroid.png; sourceTree = "<group>"; };
+		C049EC9F1EBFCE2000D1BC42 /* suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suit.png; path = ../suit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,18 +118,21 @@
 			children = (
 				C013E1521EBE96AC00CC9503 /* AppDelegate.h */,
 				C013E1531EBE96AD00CC9503 /* AppDelegate.m */,
-				C013E1551EBE96AD00CC9503 /* ViewController.h */,
 				C013E1821EBE975A00CC9503 /* Suit.h */,
 				C013E1831EBE975A00CC9503 /* Suit.m */,
 				C013E1851EBE976A00CC9503 /* Meteoroid.h */,
 				C013E1861EBE976A00CC9503 /* Meteoroid.m */,
 				C013E1881EBE978800CC9503 /* GameView.h */,
 				C013E1891EBE978800CC9503 /* GameView.m */,
+				C013E1551EBE96AD00CC9503 /* ViewController.h */,
 				C013E1561EBE96AD00CC9503 /* ViewController.m */,
 				C013E1581EBE96AD00CC9503 /* Main.storyboard */,
 				C013E15B1EBE96AD00CC9503 /* Assets.xcassets */,
 				C013E15D1EBE96AD00CC9503 /* LaunchScreen.storyboard */,
 				C013E1601EBE96AD00CC9503 /* Info.plist */,
+				C049EC9D1EBFCE2000D1BC42 /* background.jpg */,
+				C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */,
+				C049EC9F1EBFCE2000D1BC42 /* suit.png */,
 				C013E14F1EBE96AC00CC9503 /* Supporting Files */,
 			);
 			path = GravitySuit;
@@ -265,8 +274,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C013E15F1EBE96AD00CC9503 /* LaunchScreen.storyboard in Resources */,
+				C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */,
+				C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */,
 				C013E15C1EBE96AD00CC9503 /* Assets.xcassets in Resources */,
 				C013E15A1EBE96AD00CC9503 /* Main.storyboard in Resources */,
+				C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +546,7 @@
 				C013E17B1EBE96AD00CC9503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C013E17C1EBE96AD00CC9503 /* Build configuration list for PBXNativeTarget "GravitySuitTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +555,7 @@
 				C013E17E1EBE96AD00CC9503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C013E17F1EBE96AD00CC9503 /* Build configuration list for PBXNativeTarget "GravitySuitUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +564,7 @@
 				C013E1811EBE96AD00CC9503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

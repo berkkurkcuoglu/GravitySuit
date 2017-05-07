@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "Suit.h"
+#include "Meteoroid.h"
+
+@protocol GameOverDelegate;
 
 @interface GameView : UIImageView
 
+@property (nonatomic, strong) Suit *suit;
+@property (nonatomic, strong) NSMutableArray *meteoroids;
+@property (nonatomic) NSInteger highScore;
+@property (nonatomic) NSInteger currentScore;
+@property (nonatomic) NSInteger counter;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *highScoreLabel;
+
+@property (strong, nonatomic) id<GameOverDelegate>delegate;
+-(void)play:(CADisplayLink *)sender;
+
 @end
+
+
+@protocol GameOverDelegate
+-(void)gameOver;
+@end
+
