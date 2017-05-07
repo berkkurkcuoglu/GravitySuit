@@ -37,6 +37,14 @@
 
 - (IBAction)tapped:(id)sender {
     //_gameView.suit.jump = [_gameView bounds].size.height/8;
+    if(_gameView.suit.dy > 0){
+        [_gameView.suit setDy:-1.6];
+        [_gameView.suit setImage:[UIImage imageNamed:@"upSuit.png"]];
+    }
+    else{
+        [_gameView.suit setDy:1.6];
+        [_gameView.suit setImage:[UIImage imageNamed:@"suit.png"]];
+    }
 }
 
 - (IBAction)backed:(id)sender {

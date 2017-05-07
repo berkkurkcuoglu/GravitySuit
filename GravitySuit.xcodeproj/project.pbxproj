@@ -21,6 +21,7 @@
 		C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9D1EBFCE2000D1BC42 /* background.jpg */; };
 		C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */; };
 		C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9F1EBFCE2000D1BC42 /* suit.png */; };
+		C049ECA41EBFD45400D1BC42 /* upSuit.png in Resources */ = {isa = PBXBuildFile; fileRef = C049ECA31EBFD45400D1BC42 /* upSuit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C049EC9D1EBFCE2000D1BC42 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../background.jpg; sourceTree = "<group>"; };
 		C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meteoroid.png; path = ../meteoroid.png; sourceTree = "<group>"; };
 		C049EC9F1EBFCE2000D1BC42 /* suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suit.png; path = ../suit.png; sourceTree = "<group>"; };
+		C049ECA31EBFD45400D1BC42 /* upSuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upSuit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				C049EC9D1EBFCE2000D1BC42 /* background.jpg */,
 				C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */,
 				C049EC9F1EBFCE2000D1BC42 /* suit.png */,
+				C049ECA31EBFD45400D1BC42 /* upSuit.png */,
 				C013E14F1EBE96AC00CC9503 /* Supporting Files */,
 			);
 			path = GravitySuit;
@@ -279,6 +282,7 @@
 				C013E15C1EBE96AD00CC9503 /* Assets.xcassets in Resources */,
 				C013E15A1EBE96AD00CC9503 /* Main.storyboard in Resources */,
 				C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */,
+				C049ECA41EBFD45400D1BC42 /* upSuit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
