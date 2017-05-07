@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Suit : UIImageView
-@property (nonatomic) float dx, dy;
+@property (nonatomic) float dy;
 @end

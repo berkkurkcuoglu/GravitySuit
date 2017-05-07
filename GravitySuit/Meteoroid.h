@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface Meteoroid : UIImageView
-
+@property (nonatomic) BOOL touched;
 @end

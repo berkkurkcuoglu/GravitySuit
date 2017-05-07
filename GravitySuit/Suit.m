@@ -9,7 +9,7 @@
 #import "Suit.h"
 
 @implementation Suit
-@synthesize dx,dy;
+@synthesize dy;
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

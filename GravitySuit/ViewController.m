@@ -38,11 +38,11 @@
 - (IBAction)tapped:(id)sender {
     //_gameView.suit.jump = [_gameView bounds].size.height/8;
     if(_gameView.suit.dy > 0){
-        [_gameView.suit setDy:-1.6];
+        [_gameView.suit setDy:-2];
         [_gameView.suit setImage:[UIImage imageNamed:@"upSuit.png"]];
     }
     else{
-        [_gameView.suit setDy:1.6];
+        [_gameView.suit setDy:2];
         [_gameView.suit setImage:[UIImage imageNamed:@"suit.png"]];
     }
 }
@@ -94,7 +94,7 @@
                          style:UIAlertActionStyleDefault
                          handler:^(UIAlertAction * action)
                          {
-                             [self performSegueWithIdentifier:@"menuSegue" sender:nil];
+                             //[self performSegueWithIdentifier:@"menuSegue" sender:nil];
                              [alert dismissViewControllerAnimated:YES completion:nil];
                          }];
     
