@@ -10,4 +10,5 @@
 
 @interface Meteoroid : UIImageView
 @property (nonatomic) BOOL touched;
+@property (nonatomic) float dx;
 @end

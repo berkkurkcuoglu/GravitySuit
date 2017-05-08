@@ -37,11 +37,11 @@
 
 - (IBAction)tapped:(id)sender {    
     if(_gameView.suit.dy > 0){
-        [_gameView.suit setDy:-2];
+        [_gameView.suit setDy:-2.4];
         [_gameView.suit setImage:[UIImage imageNamed:@"upSuit.png"]];
     }
     else{
-        [_gameView.suit setDy:2];
+        [_gameView.suit setDy:2.4];
         [_gameView.suit setImage:[UIImage imageNamed:@"suit.png"]];
     }
 }

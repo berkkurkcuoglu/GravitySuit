@@ -38,7 +38,7 @@ CABasicAnimation *backgroundLayerAnimation;
         suit = [[Suit alloc] initWithFrame:CGRectMake(bounds.size.width/4, bounds.size.height/2, 40 , 40)];
         [suit setImage:[UIImage imageNamed:@"suit.png"]];
         [self addSubview:suit];
-        [suit setDy:2];
+        [suit setDy:2.4];
     }
     meteoroids = [[NSMutableArray alloc] init];
     return self;
@@ -68,7 +68,7 @@ CABasicAnimation *backgroundLayerAnimation;
     backgroundLayerAnimation.repeatCount = HUGE_VALF;
     backgroundLayerAnimation.duration = 5;
     [backgroundLayer addAnimation:backgroundLayerAnimation forKey:@"position"];
-    backgroundLayer.zPosition = -2;
+    backgroundLayer.zPosition = -5;
 }
 
 -(void)pauseLayer:(CALayer*)layer
@@ -99,21 +99,38 @@ CABasicAnimation *backgroundLayerAnimation;
 
 -(void)addMeteroid{
         CGRect bounds = [self bounds];
-    
-        Meteoroid *b = [[Meteoroid alloc] initWithFrame:CGRectMake(0, 0, (int)(bounds.size.width * .16),(int)(bounds.size.height * .24))];
-        [b setImage:[UIImage imageNamed:@"meteoroid.png"]];
-        [self addSubview:b];
-        b.layer.zPosition = -1;
-        [b setCenter:CGPointMake((int)((bounds.size.width) + b.frame.size.width/2), rand() % (int)(bounds.size.height - b.frame.size.height) + b.frame.size.height/2)];
-        [meteoroids addObject:b];
+        u_int32_t random = arc4random_uniform(3);
+        Meteoroid *meto;
+        if(random == 0){
+            meto = [[Meteoroid alloc] initWithFrame:CGRectMake(0, 0, (int)(bounds.size.width * .08),(int)(bounds.size.height * .12))];
+            [meto setDx:4];
+            meto.layer.zPosition = -1;
+            [meto setImage:[UIImage imageNamed:@"meteoroid.png"]];
+        }
+        else if(random == 1){
+            meto = [[Meteoroid alloc] initWithFrame:CGRectMake(0, 0, (int)(bounds.size.width * .12),(int)(bounds.size.height * .18))];
+            [meto setDx:3];
+            meto.layer.zPosition = -2;
+            [meto setImage:[UIImage imageNamed:@"meteoroid2.png"]];
+
+        }
+        else if(random == 2){
+            meto = [[Meteoroid alloc] initWithFrame:CGRectMake(0, 0, (int)(bounds.size.width * .24),(int)(bounds.size.height * .24))];
+            [meto setDx:2.4];
+            meto.layer.zPosition = -3;
+            [meto setImage:[UIImage imageNamed:@"meteoroid3.png"]];
+        }
+        [self addSubview:meto];
+        [meto setCenter:CGPointMake((int)((bounds.size.width) + meto.frame.size.width/2), rand() % (int)(bounds.size.height - meto.frame.size.height) + meto.frame.size.height/2)];
+        [meteoroids addObject:meto];
     
 }
 -(void)moveMeteroids{
     for (int i=0; i < [meteoroids count]; i++){
         Meteoroid *meto =[meteoroids objectAtIndex:i];
         CGPoint p = [meto center];
-        p.x -= 2;
-        if(p.x < 10){
+        p.x -= [meto dx];
+        if(p.x < -meto.frame.size.width/2){
             [meteoroids removeObject:meto];
             [meto removeFromSuperview];
             _currentScore += 10;
@@ -138,7 +155,6 @@ CABasicAnimation *backgroundLayerAnimation;
     
     if(p.x + f.size.width/2 > [self bounds].size.width){
         p.x -=  [self bounds].size.width;
-        _currentScore += 100;
     }
     
     if(p.y > [self bounds].size.height - f.size.height/2){
@@ -165,7 +181,7 @@ CABasicAnimation *backgroundLayerAnimation;
     
     [suit setCenter:p];
     [self updateScore];
-    if(_counter % 120 == 0){
+    if(_counter % 90 == 0){
         [self addMeteroid];
     }
     _counter++;

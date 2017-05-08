@@ -9,7 +9,7 @@
 #import "Meteoroid.h"
 
 @implementation Meteoroid
-@synthesize touched;
+@synthesize touched,dx;
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
