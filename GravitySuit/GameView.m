@@ -68,7 +68,7 @@ CABasicAnimation *backgroundLayerAnimation;
     backgroundLayerAnimation.repeatCount = HUGE_VALF;
     backgroundLayerAnimation.duration = 5;
     [backgroundLayer addAnimation:backgroundLayerAnimation forKey:@"position"];
-    backgroundLayer.zPosition = -1;
+    backgroundLayer.zPosition = -2;
 }
 
 -(void)pauseLayer:(CALayer*)layer
@@ -103,6 +103,7 @@ CABasicAnimation *backgroundLayerAnimation;
         Meteoroid *b = [[Meteoroid alloc] initWithFrame:CGRectMake(0, 0, (int)(bounds.size.width * .16),(int)(bounds.size.height * .24))];
         [b setImage:[UIImage imageNamed:@"meteoroid.png"]];
         [self addSubview:b];
+        b.layer.zPosition = -1;
         [b setCenter:CGPointMake((int)((bounds.size.width) + b.frame.size.width/2), rand() % (int)(bounds.size.height - b.frame.size.height) + b.frame.size.height/2)];
         [meteoroids addObject:b];
     
@@ -115,6 +116,7 @@ CABasicAnimation *backgroundLayerAnimation;
         if(p.x < 10){
             [meteoroids removeObject:meto];
             [meto removeFromSuperview];
+            _currentScore += 10;
         }
         else{
             [meto setCenter:p];
@@ -142,8 +144,8 @@ CABasicAnimation *backgroundLayerAnimation;
     if(p.y > [self bounds].size.height - f.size.height/2){
         p.y = [self bounds].size.height - f.size.height/2 ;
     }
-    if(p.y < f.size.height/2){
-        p.y = f.size.height/2;
+    if(p.y < f.size.height){
+        p.y = f.size.height;
     }
     
     
@@ -151,7 +153,8 @@ CABasicAnimation *backgroundLayerAnimation;
     {
         Meteoroid *meteoroid =[meteoroids objectAtIndex:i];
         CGRect b = [meteoroid frame];
-        if (CGRectIntersectsRect(b, fakeFrame) && ![meteoroid touched])
+        CGRect fakeMeto = CGRectMake(meteoroid.center.x-b.size.width/2, meteoroid.center.y-b.size.height/2, meteoroid.frame.size.width-16, meteoroid.frame.size.height-16);
+        if (CGRectIntersectsRect(fakeMeto, fakeFrame) && ![meteoroid touched])
         {
             [meteoroid setTouched:TRUE];
             [delegate gameOver];

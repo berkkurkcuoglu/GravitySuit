@@ -35,8 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)tapped:(id)sender {
-    //_gameView.suit.jump = [_gameView bounds].size.height/8;
+- (IBAction)tapped:(id)sender {    
     if(_gameView.suit.dy > 0){
         [_gameView.suit setDy:-2];
         [_gameView.suit setImage:[UIImage imageNamed:@"upSuit.png"]];
