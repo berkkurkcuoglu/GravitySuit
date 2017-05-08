@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qT0-Kf-Ing">
-    <device id="retina5_5" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -10,36 +10,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="1qv-MK-ccG">
             <objects>
-                <viewController id="qT0-Kf-Ing" sceneMemberID="viewController">
+                <viewController id="qT0-Kf-Ing" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yEg-Yv-Mr3"/>
                         <viewControllerLayoutGuide type="bottom" id="gbV-Tw-mdq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7y7-kJ-IEB">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyB-yD-E3j">
-                                <rect key="frame" x="330.66666666666669" y="192" width="75" height="30"/>
-                                <state key="normal" title="New Game"/>
+                                <rect key="frame" x="216.5" y="224" width="234" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="PK5-Cl-t81"/>
+                                    <constraint firstAttribute="width" constant="234" id="d1c-LR-8w3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="36"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" red="0.29239386320114136" green="0.44197329878807068" blue="0.083639331161975861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="10G-2v-nGk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gravity Suit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTq-iP-WpS">
+                                <rect key="frame" x="167.5" y="90" width="332" height="70"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="64"/>
+                                <color key="textColor" red="0.13823782629790371" green="0.29276255504960103" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Berk Kurkcuoglu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chK-P7-pgy">
+                                <rect key="frame" x="254.5" y="348.5" width="158" height="14.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                <color key="textColor" red="0.7979276180267334" green="0.87945818901062012" blue="0.94924229383468628" alpha="0.71726831896551724" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="suit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gaz-97-EL1">
+                                <rect key="frame" x="50" y="90" width="68" height="93"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="upSuit.png" translatesAutoresizingMaskIntoConstraints="NO" id="f8j-0e-DHS">
+                                <rect key="frame" x="551" y="92" width="66" height="91"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="laserBullet.png" translatesAutoresizingMaskIntoConstraints="NO" id="orY-7s-Q5Q">
+                                <rect key="frame" x="227" y="168" width="214" height="51"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="HyB-yD-E3j" firstAttribute="centerX" secondItem="7y7-kJ-IEB" secondAttribute="centerX" id="Kwg-qw-IOW"/>
-                            <constraint firstItem="HyB-yD-E3j" firstAttribute="centerY" secondItem="7y7-kJ-IEB" secondAttribute="centerY" id="NFr-KC-jSU"/>
+                            <constraint firstItem="hTq-iP-WpS" firstAttribute="top" secondItem="yEg-Yv-Mr3" secondAttribute="bottom" constant="70" id="2sk-JF-3TQ"/>
+                            <constraint firstItem="orY-7s-Q5Q" firstAttribute="top" secondItem="hTq-iP-WpS" secondAttribute="bottom" constant="8" id="6BI-dT-XHy"/>
+                            <constraint firstItem="chK-P7-pgy" firstAttribute="centerX" secondItem="7y7-kJ-IEB" secondAttribute="centerX" id="9PO-2H-2GB"/>
+                            <constraint firstItem="orY-7s-Q5Q" firstAttribute="centerX" secondItem="7y7-kJ-IEB" secondAttribute="centerX" id="BRJ-gU-ody"/>
+                            <constraint firstItem="f8j-0e-DHS" firstAttribute="top" secondItem="yEg-Yv-Mr3" secondAttribute="bottom" constant="72" id="F4b-E1-iDR"/>
+                            <constraint firstItem="gbV-Tw-mdq" firstAttribute="top" secondItem="chK-P7-pgy" secondAttribute="bottom" constant="12" id="F8z-SW-gda"/>
+                            <constraint firstItem="Gaz-97-EL1" firstAttribute="top" secondItem="yEg-Yv-Mr3" secondAttribute="bottom" constant="70" id="bJ7-AY-Ehz"/>
+                            <constraint firstItem="HyB-yD-E3j" firstAttribute="top" secondItem="orY-7s-Q5Q" secondAttribute="bottom" constant="5" id="bzQ-55-xJv"/>
+                            <constraint firstItem="hTq-iP-WpS" firstAttribute="centerX" secondItem="7y7-kJ-IEB" secondAttribute="centerX" id="i8F-ee-hbH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f8j-0e-DHS" secondAttribute="trailing" constant="30" id="jG1-Ie-97Y"/>
+                            <constraint firstItem="Gaz-97-EL1" firstAttribute="leading" secondItem="7y7-kJ-IEB" secondAttribute="leadingMargin" constant="30" id="kl5-ws-H8C"/>
+                            <constraint firstItem="HyB-yD-E3j" firstAttribute="centerX" secondItem="hTq-iP-WpS" secondAttribute="centerX" id="y0D-aO-GEW"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjT-9y-4IW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-559.07046476761627" y="98.400000000000006"/>
+            <point key="canvasLocation" x="-559.97001499250382" y="96.799999999999997"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -50,11 +88,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YYc-Pj-mtH" customClass="GameView">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7w7-yA-pEa">
                                         <rect key="frame" x="62" y="8" width="46" height="30"/>
@@ -65,13 +103,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8a-jt-eMw">
-                                        <rect key="frame" x="686.66666666666652" y="24.000000000000004" width="41.333333333333371" height="19.333333333333339"/>
+                                        <rect key="frame" x="617.5" y="24" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59b-Fe-Lgw">
-                                        <rect key="frame" x="676.33333333333348" y="51.333333333333329" width="51.666666666666629" height="20.333333333333329"/>
+                                        <rect key="frame" x="607" y="52.5" width="52" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -83,13 +121,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-J1-uXM">
-                                        <rect key="frame" x="16" y="364" width="30" height="34"/>
+                                        <rect key="frame" x="16" y="325" width="30" height="34"/>
                                         <connections>
                                             <action selector="shoot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfA-sR-8Te"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bullet Ready In:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcH-hl-lMM">
-                                        <rect key="frame" x="306.33333333333331" y="24" width="124" height="21"/>
+                                        <rect key="frame" x="272" y="24" width="124" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -141,4 +179,9 @@
             <point key="canvasLocation" x="115.59220389805098" y="122.40000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="laserBullet.png" width="214" height="51"/>
+        <image name="suit.png" width="68" height="93"/>
+        <image name="upSuit.png" width="66" height="91"/>
+    </resources>
 </document>

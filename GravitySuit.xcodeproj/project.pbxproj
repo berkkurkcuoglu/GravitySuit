@@ -25,6 +25,7 @@
 		C04124BE1EC109D00046A54B /* spaceLoop.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124BA1EC109D00046A54B /* spaceLoop.wav */; };
 		C04124C11EC10DD70046A54B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04124C01EC10DD70046A54B /* AVFoundation.framework */; };
 		C04124C31EC110840046A54B /* blip.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124C21EC110840046A54B /* blip.wav */; };
+		C04124C61EC11ABD0046A54B /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04124C51EC11ABD0046A54B /* MenuViewController.m */; };
 		C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9D1EBFCE2000D1BC42 /* background.jpg */; };
 		C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */; };
 		C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9F1EBFCE2000D1BC42 /* suit.png */; };
@@ -83,6 +84,8 @@
 		C04124BA1EC109D00046A54B /* spaceLoop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spaceLoop.wav; sourceTree = "<group>"; };
 		C04124C01EC10DD70046A54B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C04124C21EC110840046A54B /* blip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = blip.wav; path = ../../blip.wav; sourceTree = "<group>"; };
+		C04124C41EC11ABD0046A54B /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		C04124C51EC11ABD0046A54B /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C049EC9D1EBFCE2000D1BC42 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../background.jpg; sourceTree = "<group>"; };
 		C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meteoroid.png; path = ../meteoroid.png; sourceTree = "<group>"; };
 		C049EC9F1EBFCE2000D1BC42 /* suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suit.png; path = ../suit.png; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				C013E1891EBE978800CC9503 /* GameView.m */,
 				C013E1551EBE96AD00CC9503 /* ViewController.h */,
 				C013E1561EBE96AD00CC9503 /* ViewController.m */,
+				C04124C41EC11ABD0046A54B /* MenuViewController.h */,
+				C04124C51EC11ABD0046A54B /* MenuViewController.m */,
 				C013E1581EBE96AD00CC9503 /* Main.storyboard */,
 				C013E15B1EBE96AD00CC9503 /* Assets.xcassets */,
 				C013E15D1EBE96AD00CC9503 /* LaunchScreen.storyboard */,
@@ -367,6 +372,7 @@
 				C08784E01EC0600400330D5B /* Bullet.m in Sources */,
 				C013E18A1EBE978800CC9503 /* GameView.m in Sources */,
 				C013E1571EBE96AD00CC9503 /* ViewController.m in Sources */,
+				C04124C61EC11ABD0046A54B /* MenuViewController.m in Sources */,
 				C013E1541EBE96AD00CC9503 /* AppDelegate.m in Sources */,
 				C013E1841EBE975A00CC9503 /* Suit.m in Sources */,
 				C013E1871EBE976A00CC9503 /* Meteoroid.m in Sources */,
