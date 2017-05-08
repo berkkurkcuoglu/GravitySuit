@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet GameView *gameView;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
+@property (strong, nonatomic) IBOutlet UIButton *fireButton;
 
 @end
 

@@ -10,7 +10,7 @@
 
 
 @implementation GameView
-@synthesize suit,meteoroids;
+@synthesize suit,meteoroids,bullet;
 @synthesize delegate,backgroundLayer;
 
 CABasicAnimation *backgroundLayerAnimation;
@@ -26,6 +26,7 @@ CABasicAnimation *backgroundLayerAnimation;
 {
     self = [super initWithCoder:aDecoder];
     _counter = 0;
+    _ammo = 0;
     _scoreLabel.adjustsFontSizeToFitWidth = YES;
     _scoreLabel.minimumScaleFactor = 0.4;
     _highScoreLabel.adjustsFontSizeToFitWidth = YES;
@@ -91,7 +92,7 @@ CABasicAnimation *backgroundLayerAnimation;
 -(void)updateScore{
     if(_currentScore > _highScore){
         _highScore = _currentScore;
-        [[NSUserDefaults standardUserDefaults] setInteger:_highScore forKey:@"suitHighScore"];
+        [[NSUserDefaults standardUserDefaults] setInteger:_highScore forKey:@"gravityHighScore"];
     }
     [_scoreLabel setText:[NSString stringWithFormat:@"Score: %ld",_currentScore]];
     [_highScoreLabel setText:[NSString stringWithFormat:@"Best: %ld",_highScore]];
@@ -132,7 +133,7 @@ CABasicAnimation *backgroundLayerAnimation;
         p.x -= [meto dx];
         if(p.x < -meto.frame.size.width/2){
             [meteoroids removeObject:meto];
-            [meto removeFromSuperview];
+            [meto removeFromSuperview];            
             _currentScore += 10;
         }
         else{
@@ -141,11 +142,34 @@ CABasicAnimation *backgroundLayerAnimation;
     }
 }
 
+-(void)shoot{
+    if(_ammo == 1){
+        _ammo--;
+        CGPoint p = [suit center];
+        CGRect f = [suit frame];
+        bullet = [[Bullet alloc] initWithFrame:CGRectMake(p.x + f.size.width/2, p.y , 24,6)];
+        [bullet setImage:[UIImage imageNamed:@"laserBullet.png"]];
+        [self addSubview:bullet];
+    }
+}
 -(void)play:(CADisplayLink *)sender{
     
     if(_counter == 0)
         [self scrollBackground];
     
+    if(_counter % 480 == 0){
+        _ammo = 1;
+    }
+    
+    if(_counter % 60 == 0){
+        if(_ammo == 1)
+             [_bulletLabel setText:[NSString stringWithFormat:@"Bullet Ready"]];
+        else
+            [_bulletLabel setText:[NSString stringWithFormat:@"Bullet Ready In: %ld",8-(_counter%480)/60]];
+    }
+    CGPoint bulletP = [bullet center];
+    bulletP.x += 2;
+
     CGPoint p = [suit center];
     CGRect f = [suit frame];
     p.y += [suit dy];
@@ -177,9 +201,22 @@ CABasicAnimation *backgroundLayerAnimation;
              [sender invalidate];
             [self pauseLayer:backgroundLayer];
         }
+        if(CGRectIntersectsRect(fakeMeto, [bullet frame]) && ![meteoroid touched]){
+            [meteoroid setTouched:TRUE];
+            [meteoroid removeFromSuperview];
+            [bullet removeFromSuperview];
+            bullet = nil;
+            if(meteoroid.layer.zPosition == -1)
+                _currentScore += 50;
+            else if(meteoroid.layer.zPosition == -2)
+                 _currentScore += 40;
+            else if(meteoroid.layer.zPosition == -3)
+                 _currentScore += 30;
+        }
     }
     
     [suit setCenter:p];
+    [bullet setCenter:bulletP];
     [self updateScore];
     if(_counter % 90 == 0){
         [self addMeteroid];

@@ -65,14 +65,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8a-jt-eMw">
-                                        <rect key="frame" x="689" y="24" width="39" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="686.66666666666652" y="24.000000000000004" width="41.333333333333371" height="19.333333333333339"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59b-Fe-Lgw">
-                                        <rect key="frame" x="678.66666666666652" y="53" width="49.333333333333371" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="676.33333333333348" y="51.333333333333329" width="51.666666666666629" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -82,18 +82,35 @@
                                             <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UQe-cM-brl"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVv-J1-uXM">
+                                        <rect key="frame" x="16" y="364" width="30" height="34"/>
+                                        <connections>
+                                            <action selector="shoot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfA-sR-8Te"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bullet Ready In:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcH-hl-lMM">
+                                        <rect key="frame" x="306.33333333333331" y="24" width="124" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="FVv-J1-uXM" secondAttribute="bottom" constant="16" id="2Ae-s0-nhw"/>
+                                    <constraint firstItem="FVv-J1-uXM" firstAttribute="leading" secondItem="YYc-Pj-mtH" secondAttribute="leading" constant="16" id="6mf-yv-yEW"/>
                                     <constraint firstItem="59b-Fe-Lgw" firstAttribute="top" secondItem="W8a-jt-eMw" secondAttribute="bottom" constant="8" id="7DD-IK-MtK"/>
                                     <constraint firstItem="W8a-jt-eMw" firstAttribute="top" secondItem="YYc-Pj-mtH" secondAttribute="top" constant="24" id="OE5-MX-SyM"/>
                                     <constraint firstItem="377-6r-33m" firstAttribute="top" secondItem="YYc-Pj-mtH" secondAttribute="top" constant="24" id="WkZ-1b-37x"/>
+                                    <constraint firstItem="WcH-hl-lMM" firstAttribute="centerX" secondItem="YYc-Pj-mtH" secondAttribute="centerX" id="Z96-H4-Lm3"/>
                                     <constraint firstItem="377-6r-33m" firstAttribute="leading" secondItem="YYc-Pj-mtH" secondAttribute="leading" constant="8" id="o5v-bc-fh8"/>
                                     <constraint firstItem="59b-Fe-Lgw" firstAttribute="trailing" secondItem="W8a-jt-eMw" secondAttribute="trailing" id="sNs-ui-a9i"/>
+                                    <constraint firstItem="WcH-hl-lMM" firstAttribute="top" secondItem="YYc-Pj-mtH" secondAttribute="top" constant="24" id="tUV-0d-iTZ"/>
                                     <constraint firstAttribute="trailing" secondItem="W8a-jt-eMw" secondAttribute="trailing" constant="8" id="xPA-zo-nl2"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="bulletLabel" destination="WcH-hl-lMM" id="PuK-RX-8nY"/>
                                     <outlet property="highScoreLabel" destination="W8a-jt-eMw" id="ZLK-dx-dEy"/>
                                     <outlet property="scoreLabel" destination="59b-Fe-Lgw" id="y8r-ud-VM1"/>
                                     <outletCollection property="gestureRecognizers" destination="fIW-q7-VLJ" appends="YES" id="3rh-qz-sW8"/>
@@ -109,6 +126,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fireButton" destination="FVv-J1-uXM" id="xwc-wU-HIT"/>
                         <outlet property="gameView" destination="YYc-Pj-mtH" id="pSg-fe-f53"/>
                         <outlet property="pauseButton" destination="377-6r-33m" id="7HZ-Qo-9hY"/>
                     </connections>

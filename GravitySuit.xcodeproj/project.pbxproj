@@ -25,6 +25,9 @@
 		C08784DA1EC05D6600330D5B /* meteoroid2.png in Resources */ = {isa = PBXBuildFile; fileRef = C08784D81EC05D6600330D5B /* meteoroid2.png */; };
 		C08784DB1EC05D6600330D5B /* meteoroid3.png in Resources */ = {isa = PBXBuildFile; fileRef = C08784D91EC05D6600330D5B /* meteoroid3.png */; };
 		C08784DD1EC05E8200330D5B /* upSuit.png in Resources */ = {isa = PBXBuildFile; fileRef = C08784DC1EC05E8200330D5B /* upSuit.png */; };
+		C08784E01EC0600400330D5B /* Bullet.m in Sources */ = {isa = PBXBuildFile; fileRef = C08784DF1EC0600400330D5B /* Bullet.m */; };
+		C08784E61EC0644D00330D5B /* fireButton.png in Resources */ = {isa = PBXBuildFile; fileRef = C08784E51EC0644D00330D5B /* fireButton.png */; };
+		C08784E81EC0669800330D5B /* laserBullet.png in Resources */ = {isa = PBXBuildFile; fileRef = C08784E71EC0669800330D5B /* laserBullet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,10 @@
 		C08784D81EC05D6600330D5B /* meteoroid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteoroid2.png; sourceTree = "<group>"; };
 		C08784D91EC05D6600330D5B /* meteoroid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteoroid3.png; sourceTree = "<group>"; };
 		C08784DC1EC05E8200330D5B /* upSuit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upSuit.png; sourceTree = "<group>"; };
+		C08784DE1EC0600400330D5B /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
+		C08784DF1EC0600400330D5B /* Bullet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bullet.m; sourceTree = "<group>"; };
+		C08784E51EC0644D00330D5B /* fireButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireButton.png; sourceTree = "<group>"; };
+		C08784E71EC0669800330D5B /* laserBullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laserBullet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +137,8 @@
 				C013E1831EBE975A00CC9503 /* Suit.m */,
 				C013E1851EBE976A00CC9503 /* Meteoroid.h */,
 				C013E1861EBE976A00CC9503 /* Meteoroid.m */,
+				C08784DE1EC0600400330D5B /* Bullet.h */,
+				C08784DF1EC0600400330D5B /* Bullet.m */,
 				C013E1881EBE978800CC9503 /* GameView.h */,
 				C013E1891EBE978800CC9503 /* GameView.m */,
 				C013E1551EBE96AD00CC9503 /* ViewController.h */,
@@ -144,6 +153,8 @@
 				C08784D91EC05D6600330D5B /* meteoroid3.png */,
 				C049EC9F1EBFCE2000D1BC42 /* suit.png */,
 				C08784DC1EC05E8200330D5B /* upSuit.png */,
+				C08784E71EC0669800330D5B /* laserBullet.png */,
+				C08784E51EC0644D00330D5B /* fireButton.png */,
 				C08784CE1EC03E5D00330D5B /* pause.png */,
 				C013E14F1EBE96AC00CC9503 /* Supporting Files */,
 			);
@@ -290,6 +301,8 @@
 				C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */,
 				C08784CF1EC03E5D00330D5B /* pause.png in Resources */,
 				C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */,
+				C08784E81EC0669800330D5B /* laserBullet.png in Resources */,
+				C08784E61EC0644D00330D5B /* fireButton.png in Resources */,
 				C08784DD1EC05E8200330D5B /* upSuit.png in Resources */,
 				C013E15C1EBE96AD00CC9503 /* Assets.xcassets in Resources */,
 				C013E15A1EBE96AD00CC9503 /* Main.storyboard in Resources */,
@@ -319,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08784E01EC0600400330D5B /* Bullet.m in Sources */,
 				C013E18A1EBE978800CC9503 /* GameView.m in Sources */,
 				C013E1571EBE96AD00CC9503 /* ViewController.m in Sources */,
 				C013E1541EBE96AD00CC9503 /* AppDelegate.m in Sources */,

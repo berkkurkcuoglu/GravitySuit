@@ -27,6 +27,8 @@
     
     UIImage *btnImage = [UIImage imageNamed:@"pause.png"];
     [_pauseButton setImage:btnImage forState:UIControlStateNormal];
+    UIImage *fireImage = [UIImage imageNamed:@"fireButton.png"];
+    [_fireButton setImage:fireImage forState:UIControlStateNormal];
 }
 
 
@@ -76,6 +78,9 @@
     [alert addAction:menu];
     [alert addAction:resume];
     [self presentViewController:alert animated:YES completion:nil];
+}
+- (IBAction)shoot:(id)sender {
+    [_gameView shoot];
 }
 
 -(void)gameOver
