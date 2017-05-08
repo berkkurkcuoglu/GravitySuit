@@ -19,6 +19,12 @@
 		C013E1871EBE976A00CC9503 /* Meteoroid.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1861EBE976A00CC9503 /* Meteoroid.m */; };
 		C013E18A1EBE978800CC9503 /* GameView.m in Sources */ = {isa = PBXBuildFile; fileRef = C013E1891EBE978800CC9503 /* GameView.m */; };
 		C04124B61EC101B30046A54B /* meteoroid3.png in Resources */ = {isa = PBXBuildFile; fileRef = C04124B51EC101B30046A54B /* meteoroid3.png */; };
+		C04124BB1EC109D00046A54B /* cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124B71EC109D00046A54B /* cancel.wav */; };
+		C04124BC1EC109D00046A54B /* confirm.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124B81EC109D00046A54B /* confirm.wav */; };
+		C04124BD1EC109D00046A54B /* shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124B91EC109D00046A54B /* shoot.wav */; };
+		C04124BE1EC109D00046A54B /* spaceLoop.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124BA1EC109D00046A54B /* spaceLoop.wav */; };
+		C04124C11EC10DD70046A54B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C04124C01EC10DD70046A54B /* AVFoundation.framework */; };
+		C04124C31EC110840046A54B /* blip.wav in Resources */ = {isa = PBXBuildFile; fileRef = C04124C21EC110840046A54B /* blip.wav */; };
 		C049ECA01EBFCE2000D1BC42 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9D1EBFCE2000D1BC42 /* background.jpg */; };
 		C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */; };
 		C049ECA21EBFCE2000D1BC42 /* suit.png in Resources */ = {isa = PBXBuildFile; fileRef = C049EC9F1EBFCE2000D1BC42 /* suit.png */; };
@@ -71,6 +77,12 @@
 		C013E1881EBE978800CC9503 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameView.h; sourceTree = "<group>"; };
 		C013E1891EBE978800CC9503 /* GameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameView.m; sourceTree = "<group>"; };
 		C04124B51EC101B30046A54B /* meteoroid3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meteoroid3.png; sourceTree = "<group>"; };
+		C04124B71EC109D00046A54B /* cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cancel.wav; sourceTree = "<group>"; };
+		C04124B81EC109D00046A54B /* confirm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = confirm.wav; sourceTree = "<group>"; };
+		C04124B91EC109D00046A54B /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
+		C04124BA1EC109D00046A54B /* spaceLoop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spaceLoop.wav; sourceTree = "<group>"; };
+		C04124C01EC10DD70046A54B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C04124C21EC110840046A54B /* blip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = blip.wav; path = ../../blip.wav; sourceTree = "<group>"; };
 		C049EC9D1EBFCE2000D1BC42 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../background.jpg; sourceTree = "<group>"; };
 		C049EC9E1EBFCE2000D1BC42 /* meteoroid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = meteoroid.png; path = ../meteoroid.png; sourceTree = "<group>"; };
 		C049EC9F1EBFCE2000D1BC42 /* suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suit.png; path = ../suit.png; sourceTree = "<group>"; };
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04124C11EC10DD70046A54B /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +128,7 @@
 				C013E1681EBE96AD00CC9503 /* GravitySuitTests */,
 				C013E1731EBE96AD00CC9503 /* GravitySuitUITests */,
 				C013E14D1EBE96AC00CC9503 /* Products */,
+				C04124BF1EC10DD70046A54B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +170,11 @@
 				C08784E71EC0669800330D5B /* laserBullet.png */,
 				C08784E51EC0644D00330D5B /* fireButton.png */,
 				C08784CE1EC03E5D00330D5B /* pause.png */,
+				C04124B71EC109D00046A54B /* cancel.wav */,
+				C04124B81EC109D00046A54B /* confirm.wav */,
+				C04124C21EC110840046A54B /* blip.wav */,
+				C04124B91EC109D00046A54B /* shoot.wav */,
+				C04124BA1EC109D00046A54B /* spaceLoop.wav */,
 				C013E14F1EBE96AC00CC9503 /* Supporting Files */,
 			);
 			path = GravitySuit;
@@ -185,6 +204,14 @@
 				C013E1761EBE96AD00CC9503 /* Info.plist */,
 			);
 			path = GravitySuitUITests;
+			sourceTree = "<group>";
+		};
+		C04124BF1EC10DD70046A54B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C04124C01EC10DD70046A54B /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +331,15 @@
 				C08784E81EC0669800330D5B /* laserBullet.png in Resources */,
 				C08784E61EC0644D00330D5B /* fireButton.png in Resources */,
 				C08784DD1EC05E8200330D5B /* upSuit.png in Resources */,
+				C04124BB1EC109D00046A54B /* cancel.wav in Resources */,
 				C04124B61EC101B30046A54B /* meteoroid3.png in Resources */,
 				C013E15C1EBE96AD00CC9503 /* Assets.xcassets in Resources */,
+				C04124BC1EC109D00046A54B /* confirm.wav in Resources */,
 				C013E15A1EBE96AD00CC9503 /* Main.storyboard in Resources */,
+				C04124C31EC110840046A54B /* blip.wav in Resources */,
+				C04124BD1EC109D00046A54B /* shoot.wav in Resources */,
 				C049ECA11EBFCE2000D1BC42 /* meteoroid.png in Resources */,
+				C04124BE1EC109D00046A54B /* spaceLoop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

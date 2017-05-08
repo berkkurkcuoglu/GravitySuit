@@ -7,7 +7,7 @@
 //
 
 #import "GameView.h"
-
+#import <AudioToolbox/AudioServices.h>
 
 @implementation GameView
 @synthesize suit,meteoroids,bullet;
@@ -149,6 +149,19 @@ CABasicAnimation *backgroundLayerAnimation;
         CGRect f = [suit frame];
         bullet = [[Bullet alloc] initWithFrame:CGRectMake(p.x + f.size.width/2, p.y , 27,9)];
         [bullet setImage:[UIImage imageNamed:@"laserBullet.png"]];
+        NSString *path  = [[NSBundle mainBundle] pathForResource:@"shoot" ofType:@"wav"];
+        NSURL *pathURL = [NSURL fileURLWithPath : path];
+        SystemSoundID audioEffect;
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef) pathURL, &audioEffect);
+        AudioServicesPlaySystemSound(audioEffect);
+        [self addSubview:bullet];
+    }
+    else{
+        NSString *path  = [[NSBundle mainBundle] pathForResource:@"blip" ofType:@"wav"];
+        NSURL *pathURL = [NSURL fileURLWithPath : path];
+        SystemSoundID audioEffect;
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef) pathURL, &audioEffect);
+        AudioServicesPlaySystemSound(audioEffect);
         [self addSubview:bullet];
     }
 }
@@ -168,7 +181,7 @@ CABasicAnimation *backgroundLayerAnimation;
             [_bulletLabel setText:[NSString stringWithFormat:@"Bullet Ready In: %ld",8-(_counter%480)/60]];
     }
     CGPoint bulletP = [bullet center];
-    bulletP.x += 2;
+    bulletP.x += 5;
 
     CGPoint p = [suit center];
     CGRect f = [suit frame];
@@ -205,12 +218,23 @@ CABasicAnimation *backgroundLayerAnimation;
         if (CGRectIntersectsRect(fakeMeto, fakeFrame) && ![meteoroid touched])
         {
             [meteoroid setTouched:TRUE];
+            NSString *path  = [[NSBundle mainBundle] pathForResource:@"cancel" ofType:@"wav"];
+            NSURL *pathURL = [NSURL fileURLWithPath : path];
+            SystemSoundID audioEffect;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef) pathURL, &audioEffect);
+            AudioServicesPlaySystemSound(audioEffect);
+
             [delegate gameOver];
              [sender invalidate];
             [self pauseLayer:backgroundLayer];
         }
         if(CGRectIntersectsRect(b, [bullet frame]) && ![meteoroid touched]){
             [meteoroid setTouched:TRUE];
+            NSString *path  = [[NSBundle mainBundle] pathForResource:@"confirm" ofType:@"wav"];
+            NSURL *pathURL = [NSURL fileURLWithPath : path];
+            SystemSoundID audioEffect;
+            AudioServicesCreateSystemSoundID((__bridge CFURLRef) pathURL, &audioEffect);
+            AudioServicesPlaySystemSound(audioEffect);
             [meteoroid removeFromSuperview];
             [bullet removeFromSuperview];
             bullet = nil;

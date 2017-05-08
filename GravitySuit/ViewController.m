@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface ViewController ()
 @property (nonatomic, strong) CADisplayLink *displayLink;
+@property(nonatomic, strong) AVAudioPlayer *backgroundMusic;
 @end
 
 @implementation ViewController
@@ -17,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSURL *musicFile = [[NSBundle mainBundle] URLForResource:@"spaceLoop"
+                                               withExtension:@"wav"];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile
+                                                                  error:nil];
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic play];
     _gameView.currentScore = 0;
     _gameView.highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"gravityHighScore"];
     _gameView.delegate = self;
@@ -51,6 +59,7 @@
 - (IBAction)pause:(id)sender {
     self.displayLink.paused = YES;
     [_gameView pauseLayer:_gameView.backgroundLayer];
+    [self.backgroundMusic pause];
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Paused"
                                   message:[NSString stringWithFormat:@""]
@@ -63,6 +72,7 @@
                              {
                                  self.displayLink.paused = NO;
                                  [_gameView resumeLayer:_gameView.backgroundLayer];
+                                 [self.backgroundMusic play];
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                              }];
     
