@@ -23,8 +23,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *highScoreLabel;
 
 @property (strong, nonatomic) id<GameOverDelegate>delegate;
+@property (nonatomic) CALayer *backgroundLayer;
 -(void)play:(CADisplayLink *)sender;
-
+-(void)pauseLayer:(CALayer*)layer;
+-(void)resumeLayer:(CALayer*)layer;
 @end
 
 

@@ -11,8 +11,8 @@
 
 @implementation GameView
 @synthesize suit,meteoroids;
-@synthesize delegate;
-CALayer *backgroundLayer;
+@synthesize delegate,backgroundLayer;
+
 CABasicAnimation *backgroundLayerAnimation;
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -21,6 +21,7 @@ CABasicAnimation *backgroundLayerAnimation;
     // Drawing code
 }
 */
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -29,10 +30,9 @@ CABasicAnimation *backgroundLayerAnimation;
     _scoreLabel.minimumScaleFactor = 0.4;
     _highScoreLabel.adjustsFontSizeToFitWidth = YES;
     _highScoreLabel.minimumScaleFactor = 0.4;
-    [_highScoreLabel setText:[NSString stringWithFormat:@"Best: %ld",_highScore]];
+    [_highScoreLabel setText:[NSString stringWithFormat:@"Best: %ld",_highScore]];    
     [self updateScore];
-    [self setImage:[UIImage imageNamed:@"background.jpg"]];
-    if (self)
+        if (self)
     {
         CGRect bounds = [self bounds];
         suit = [[Suit alloc] initWithFrame:CGRectMake(bounds.size.width/4, bounds.size.height/2, 40 , 40)];
@@ -43,8 +43,50 @@ CABasicAnimation *backgroundLayerAnimation;
     meteoroids = [[NSMutableArray alloc] init];
     return self;
 }
+// adapted code from : http://stackoverflow.com/questions/8790079/animate-infinite-scrolling-of-an-image-in-a-seamless-loop
+-(void)scrollBackground {
+    UIImage *Image = [UIImage imageNamed:@"background.jpg"];
+    UIColor *backgroundPattern = [UIColor colorWithPatternImage:Image];
+    backgroundLayer = [CALayer layer];
+    backgroundLayer.backgroundColor = (backgroundPattern.CGColor);
+    
+    backgroundLayer.transform = CATransform3DMakeScale(1, -1, 1);
+    
+    backgroundLayer.anchorPoint = CGPointMake(0, 1);
+    
+    CGSize viewSize = self.bounds.size;
+    backgroundLayer.frame = CGRectMake(0, 0, viewSize.width * 3, viewSize.height * 1.5);
+    
+    [self.layer addSublayer:backgroundLayer];
+    
+    CGPoint startPoint = CGPointZero;
+    CGPoint endPoint = CGPointMake(-Image.size.width, 0);
+    backgroundLayerAnimation = [CABasicAnimation animationWithKeyPath:@"position"];
+    backgroundLayerAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    backgroundLayerAnimation.fromValue = [NSValue valueWithCGPoint:startPoint];
+    backgroundLayerAnimation.toValue = [NSValue valueWithCGPoint:endPoint];
+    backgroundLayerAnimation.repeatCount = HUGE_VALF;
+    backgroundLayerAnimation.duration = 5;
+    [backgroundLayer addAnimation:backgroundLayerAnimation forKey:@"position"];
+    backgroundLayer.zPosition = -1;
+}
 
+-(void)pauseLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    layer.speed = 0.0;
+    layer.timeOffset = pausedTime;
+}
 
+-(void)resumeLayer:(CALayer*)layer
+{
+    CFTimeInterval pausedTime = [layer timeOffset];
+    layer.speed = 1.0;
+    layer.timeOffset = 0.0;
+    layer.beginTime = 0.0;
+    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+    layer.beginTime = timeSincePause;
+}
 
 -(void)updateScore{
     if(_currentScore > _highScore){
@@ -80,30 +122,10 @@ CABasicAnimation *backgroundLayerAnimation;
     }
 }
 
-/*
--(BOOL)meteoroidIsOverlapping:(meteoroid*) meteoroid{
-    CGRect theFrame = [meteoroid frame];
-    for (int i=0; i < [meteoroids count]; i++){
-        meteoroid *othermeteoroid = [meteoroids objectAtIndex:i];
-        CGRect otherFrame = [othermeteoroid frame];
-        if(meteoroid != othermeteoroid && (CGRectIntersectsRect(theFrame, otherFrame) || (fabs(meteoroid.center.x-othermeteoroid.center.x) < (suit.frame.size.width*1.6+theFrame.size.width) && fabs(meteoroid.center.y-othermeteoroid.center.y) < (suit.frame.size.height*2+theFrame.size.height))))
-            return true;
-    }
-    for (int i=0; i < [coins count]; i++){
-        Coin *otherCoin = [coins objectAtIndex:i];
-        CGRect otherFrame = [otherCoin frame];
-        if(CGRectIntersectsRect(theFrame, otherFrame))
-            return true;
-    }
-    if(CGRectIntersectsRect(theFrame, [pizza frame]))
-        return true;
-    
-    return false;
-}
-
-*/
 -(void)play:(CADisplayLink *)sender{
     
+    if(_counter == 0)
+        [self scrollBackground];
     
     CGPoint p = [suit center];
     CGRect f = [suit frame];
@@ -133,14 +155,16 @@ CABasicAnimation *backgroundLayerAnimation;
         {
             [meteoroid setTouched:TRUE];
             [delegate gameOver];
-            //[sender invalidate];
+             [sender invalidate];
+            [self pauseLayer:backgroundLayer];
         }
     }
     
     [suit setCenter:p];
     [self updateScore];
-    if(_counter % 120 == 0)
+    if(_counter % 120 == 0){
         [self addMeteroid];
+    }
     _counter++;
 }
 

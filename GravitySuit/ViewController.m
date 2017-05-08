@@ -47,12 +47,9 @@
     }
 }
 
-- (IBAction)backed:(id)sender {
-    [self.displayLink invalidate];
-}
-
 - (IBAction)pause:(id)sender {
     self.displayLink.paused = YES;
+    [_gameView pauseLayer:_gameView.backgroundLayer];
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Paused"
                                   message:[NSString stringWithFormat:@""]
@@ -64,6 +61,7 @@
                              handler:^(UIAlertAction * action)
                              {
                                  self.displayLink.paused = NO;
+                                 [_gameView resumeLayer:_gameView.backgroundLayer];
                                  [alert dismissViewControllerAnimated:YES completion:nil];
                              }];
     
@@ -94,7 +92,7 @@
                          style:UIAlertActionStyleDefault
                          handler:^(UIAlertAction * action)
                          {
-                             //[self performSegueWithIdentifier:@"menuSegue" sender:nil];
+                             [self performSegueWithIdentifier:@"menuSegue" sender:nil];
                              [alert dismissViewControllerAnimated:YES completion:nil];
                          }];
     
