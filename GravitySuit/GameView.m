@@ -147,7 +147,7 @@ CABasicAnimation *backgroundLayerAnimation;
         _ammo--;
         CGPoint p = [suit center];
         CGRect f = [suit frame];
-        bullet = [[Bullet alloc] initWithFrame:CGRectMake(p.x + f.size.width/2, p.y , 24,6)];
+        bullet = [[Bullet alloc] initWithFrame:CGRectMake(p.x + f.size.width/2, p.y , 27,9)];
         [bullet setImage:[UIImage imageNamed:@"laserBullet.png"]];
         [self addSubview:bullet];
     }
@@ -193,7 +193,15 @@ CABasicAnimation *backgroundLayerAnimation;
     {
         Meteoroid *meteoroid =[meteoroids objectAtIndex:i];
         CGRect b = [meteoroid frame];
-        CGRect fakeMeto = CGRectMake(meteoroid.center.x-b.size.width/2, meteoroid.center.y-b.size.height/2, meteoroid.frame.size.width-16, meteoroid.frame.size.height-16);
+        CGRect fakeMeto;
+        if(meteoroid.layer.zPosition == -1)
+            fakeMeto = CGRectMake(meteoroid.center.x-b.size.width/2, meteoroid.center.y-b.size.height/2, meteoroid.frame.size.width-4, meteoroid.frame.size.height-4);
+        else if(meteoroid.layer.zPosition == -2)
+            fakeMeto = CGRectMake(meteoroid.center.x-b.size.width/2, meteoroid.center.y-b.size.height/2, meteoroid.frame.size.width-8, meteoroid.frame.size.height-8);
+        else if(meteoroid.layer.zPosition == -3)
+            fakeMeto = CGRectMake(meteoroid.center.x-b.size.width/2, meteoroid.center.y-b.size.height/2, meteoroid.frame.size.width-21, meteoroid.frame.size.height-16);
+
+        
         if (CGRectIntersectsRect(fakeMeto, fakeFrame) && ![meteoroid touched])
         {
             [meteoroid setTouched:TRUE];
@@ -201,7 +209,7 @@ CABasicAnimation *backgroundLayerAnimation;
              [sender invalidate];
             [self pauseLayer:backgroundLayer];
         }
-        if(CGRectIntersectsRect(fakeMeto, [bullet frame]) && ![meteoroid touched]){
+        if(CGRectIntersectsRect(b, [bullet frame]) && ![meteoroid touched]){
             [meteoroid setTouched:TRUE];
             [meteoroid removeFromSuperview];
             [bullet removeFromSuperview];
