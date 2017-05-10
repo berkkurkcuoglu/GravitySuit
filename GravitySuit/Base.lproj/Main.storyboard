@@ -43,16 +43,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Berk Kurkcuoglu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chK-P7-pgy">
-                                <rect key="frame" x="254.5" y="348.5" width="158" height="14.5"/>
+                                <rect key="frame" x="254.5" y="348" width="158" height="15"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                 <color key="textColor" red="0.7979276180267334" green="0.87945818901062012" blue="0.94924229383468628" alpha="0.71726831896551724" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="suit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gaz-97-EL1">
-                                <rect key="frame" x="50" y="90" width="68" height="93"/>
+                                <rect key="frame" x="50" y="90" width="93" height="92"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="upSuit.png" translatesAutoresizingMaskIntoConstraints="NO" id="f8j-0e-DHS">
-                                <rect key="frame" x="551" y="92" width="66" height="91"/>
+                                <rect key="frame" x="524" y="92" width="93" height="92"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="laserBullet.png" translatesAutoresizingMaskIntoConstraints="NO" id="orY-7s-Q5Q">
                                 <rect key="frame" x="227" y="168" width="214" height="51"/>
@@ -181,7 +181,7 @@
     </scenes>
     <resources>
         <image name="laserBullet.png" width="214" height="51"/>
-        <image name="suit.png" width="68" height="93"/>
-        <image name="upSuit.png" width="66" height="91"/>
+        <image name="suit.png" width="93" height="92"/>
+        <image name="upSuit.png" width="93" height="92"/>
     </resources>
 </document>

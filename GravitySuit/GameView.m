@@ -122,7 +122,10 @@ CABasicAnimation *backgroundLayerAnimation;
             [meto setImage:[UIImage imageNamed:@"meteoroid3.png"]];
         }
         [self addSubview:meto];
-        [meto setCenter:CGPointMake((int)((bounds.size.width) + meto.frame.size.width/2), rand() % (int)(bounds.size.height - meto.frame.size.height) + meto.frame.size.height/2)];
+        CGPoint metoCenter = CGPointMake((int)((bounds.size.width) + meto.frame.size.width/2), rand() % (int)(bounds.size.height - meto.frame.size.height) + meto.frame.size.height/2);
+        if(metoCenter.y <= meto.frame.size.height/2)
+            metoCenter.y += meto.frame.size.height/2;
+        [meto setCenter:metoCenter];
         [meteoroids addObject:meto];
     
 }
@@ -167,7 +170,7 @@ CABasicAnimation *backgroundLayerAnimation;
 }
 -(void)play:(CADisplayLink *)sender{
     
-    if(_counter == 0)
+    if(_counter == 6)
         [self scrollBackground];
     
     if(_counter % 480 == 0){

@@ -95,7 +95,6 @@
 
 -(void)gameOver
 {
-    //NSLog(@"Game over");
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:@"Game Over!!!"
                                   message:[NSString stringWithFormat:@"High Score: %lu \n\nYour Score: %lu",[_gameView highScore],[_gameView currentScore]]
